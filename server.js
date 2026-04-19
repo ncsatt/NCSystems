@@ -1144,7 +1144,91 @@ Business: "${input}"`,
 });
 
 // ── Routes ───────────────────────────────────────────────────────────────────
-app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/', (_, res) => res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCSystems — AI systems built for your industry</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #020203; color: #EDEEF2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    #starfield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; }
+    .container { position: relative; z-index: 1; width: 100%; max-width: 720px; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; }
+    .wordmark { font-family: 'Geist Mono', ui-monospace, 'Courier New', monospace; font-size: 13px; letter-spacing: 0.15em; color: #EDEEF2; opacity: 0; display: flex; align-items: center; gap: 6px; }
+    .wordmark.visible { opacity: 1; transition: opacity 0.6s ease; }
+    .wordmark-bracket { opacity: 0.35; }
+    .wordmark-dot { width: 7px; height: 7px; background: #EDEEF2; border-radius: 50%; animation: dot-pulse 3s ease-in-out infinite; }
+    @keyframes dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .headline { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; letter-spacing: -0.02em; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .line-1 { font-weight: 700; color: #EDEEF2; }
+    .line-2 { font-style: italic; font-weight: 400; color: #EDEEF2; font-family: Georgia, 'Times New Roman', serif; }
+    .cursor { display: inline-block; width: 2px; height: 1em; background: #EDEEF2; margin-left: 2px; vertical-align: middle; animation: blink 0.8s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .input-wrap { width: 100%; position: relative; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .input-wrap.visible { opacity: 1; transform: translateY(0); }
+    .input-box { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 56px 18px 22px; font-size: 18px; color: #EDEEF2; outline: none; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; caret-color: #EDEEF2; }
+    .input-box::placeholder { color: rgba(237,238,242,0.3); }
+    .input-box:focus { border-color: rgba(255,255,255,0.3); box-shadow: 0 0 0 3px rgba(255,255,255,0.05); }
+    .send-btn { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 9px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #EDEEF2; transition: background 0.2s; }
+    .send-btn:hover { background: rgba(255,255,255,0.18); }
+    .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .loading { display: none; align-items: center; gap: 5px; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); }
+    .loading span { width: 5px; height: 5px; background: #EDEEF2; border-radius: 50%; animation: ldot 1.2s ease-in-out infinite; }
+    .loading span:nth-child(2) { animation-delay: 0.2s; }
+    .loading span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes ldot { 0%, 80%, 100% { transform: scale(0.5); opacity: 0.3; } 40% { transform: scale(1); opacity: 1; } }
+    body.is-loading .send-btn { display: none; }
+    body.is-loading .loading { display: flex; }
+    body.is-loading .input-box { pointer-events: none; }
+    footer { position: fixed; bottom: 1.5rem; left: 0; right: 0; display: flex; justify-content: space-between; padding: 0 2rem; font-size: 12px; color: rgba(237,238,242,0.3); letter-spacing: 0.04em; z-index: 1; opacity: 0; transition: opacity 0.6s ease; }
+    footer.visible { opacity: 1; }
+    .footer-right { display: flex; align-items: center; gap: 8px; }
+    .footer-dot { width: 6px; height: 6px; background: rgba(237,238,242,0.4); border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <div class="container">
+    <div class="wordmark" id="wordmark"><span class="wordmark-bracket">[</span>NCSYSTEMS<span class="wordmark-dot"></span><span class="wordmark-bracket">]</span></div>
+    <div class="headline" id="headline"><div class="line-1" id="line1"></div><div class="line-2" id="line2"></div></div>
+    <div class="input-wrap" id="inputWrap">
+      <input class="input-box" id="bizInput" type="text" placeholder="I run a…" autocomplete="off" />
+      <button class="send-btn" id="sendBtn" aria-label="Submit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      <div class="loading" id="loading"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <footer id="footer"><span>ncsystems.io</span><div class="footer-right"><div class="footer-dot"></div><span>accepting new engagements</span></div></footer>
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function initStars() { stars = []; for (let i = 0; i < 220; i++) stars.push({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.4+0.3, speed: Math.random()*0.004+0.001, phase: Math.random()*Math.PI*2, drift: (Math.random()-0.5)*0.08 }); }
+    function drawStars(t) { ctx.clearRect(0,0,W,H); for (const s of stars) { const a = 0.3+0.7*(0.5+0.5*Math.sin(t*s.speed*60+s.phase)); ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle='rgba(237,238,242,'+a+')'; ctx.fill(); if(s.r>1.2&&a>0.85){ctx.beginPath();ctx.moveTo(s.x-s.r*3,s.y);ctx.lineTo(s.x+s.r*3,s.y);ctx.moveTo(s.x,s.y-s.r*3);ctx.lineTo(s.x,s.y+s.r*3);ctx.strokeStyle='rgba(237,238,242,'+(a*0.3)+')';ctx.lineWidth=0.5;ctx.stroke();} s.x+=s.drift; if(s.x<-2)s.x=W+2; if(s.x>W+2)s.x=-2; } }
+    function loop(t) { drawStars(t/1000); requestAnimationFrame(loop); }
+    resize(); initStars(); requestAnimationFrame(loop);
+    window.addEventListener('resize', () => { resize(); initStars(); });
+
+    const LINE1 = 'Tell me what you do.';
+    const LINE2 = "I'll show you what's possible.";
+    const line1El = document.getElementById('line1'), line2El = document.getElementById('line2');
+    const wordmark = document.getElementById('wordmark'), inputWrap = document.getElementById('inputWrap'), footer = document.getElementById('footer');
+    function typeText(el, text, speed, cb) { let i=0; const cur=document.createElement('span'); cur.className='cursor'; el.appendChild(cur); const iv=setInterval(()=>{ cur.before(document.createTextNode(text[i])); i++; if(i>=text.length){clearInterval(iv); if(cb)setTimeout(cb,320); else cur.remove();} },speed); }
+    setTimeout(()=>{ typeText(line1El,LINE1,52,()=>{ const c=line1El.querySelector('.cursor'); if(c)c.remove(); setTimeout(()=>{ typeText(line2El,LINE2,46,()=>{ const c2=line2El.querySelector('.cursor'); if(c2)c2.remove(); setTimeout(()=>inputWrap.classList.add('visible'),200); setTimeout(()=>wordmark.classList.add('visible'),500); setTimeout(()=>footer.classList.add('visible'),800); }); },180); }); },600);
+
+    const bizInput = document.getElementById('bizInput'), sendBtn = document.getElementById('sendBtn');
+    bizInput.addEventListener('keydown', e => { if(e.key==='Enter'){e.preventDefault();submit();} });
+    sendBtn.addEventListener('click', submit);
+    async function submit() {
+      const val = bizInput.value.trim(); if(!val) return;
+      document.body.classList.add('is-loading'); sendBtn.disabled = true;
+      try { const res = await fetch('/classify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:val})}); const {niche} = await res.json(); window.location.href='/'+niche; }
+      catch(err) { document.body.classList.remove('is-loading'); sendBtn.disabled=false; bizInput.placeholder='Something went wrong — try again'; }
+    }
+  </script>
+</body>
+</html>`));
 
 Object.keys(NICHES).forEach(slug => {
   app.get('/' + slug, (_, res) => res.send(buildNichePage(NICHES[slug])));
