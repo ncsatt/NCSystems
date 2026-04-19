@@ -18,8 +18,8 @@ const NICHES = {
     heroSub: "Most guests reach out at night, between tours, or while you're busy running the business. If no one responds, they book somewhere else. We fix that.",
     heroNote: 'Built for tour operators, activity companies, charters, surf schools, and boutique hospitality teams.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in tour and hospitality businesses.",
-    specificityLine: "Most operators lose the most bookings between 8pm and midnight — when guests are planning and no one is responding.",
+    connectionLine: "This is almost always the first place we find the leak in tour and hospitality businesses.",
+    specificityLine: "The guests who don't hear back book somewhere else before morning.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Someone messages you at night', body: 'You reply in the morning. They already booked.' },
@@ -61,8 +61,8 @@ const NICHES = {
     heroSub: "Your best leads show up while you're on the floor. If they don't hear back within the hour, they book somewhere else. We fix that.",
     heroNote: 'Built for personal trainers, fitness studios, yoga instructors, online coaches, and gym owners.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in fitness businesses.",
-    specificityLine: "Most trainers lose the most leads between their 6pm session and the time they check their phone at 8 or 9pm.",
+    connectionLine: "This is almost always the first place we find the leak in fitness businesses.",
+    specificityLine: "The lead doesn't wait. They sign up with whoever responds in the next 20 minutes.",
     painLabel: "What's actually happening",
     pains: [
       { title: "Someone DMs while you're coaching", body: "You're fully present with a client. Three people ask about your packages. By the time you're free, two of them have moved on." },
@@ -104,8 +104,8 @@ const NICHES = {
     heroSub: "Buyers fill out forms at 11pm ready to move. By 8am they've already called two other agents. We fix that.",
     heroNote: 'Built for independent agents, small teams, and brokerages managing high inquiry volume.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in real estate businesses.",
-    specificityLine: "Most agents lose the most leads in the first hour after a form submission — not over the following days.",
+    connectionLine: "This is almost always the first place we find the leak in real estate businesses.",
+    specificityLine: "The best agent doesn't win. The first one to respond does.",
     painLabel: "What's actually happening",
     pains: [
       { title: "Leads come in while you're showing", body: "You're at a showing or on a call. A form comes in. By the time you're free, they've already moved on." },
@@ -113,7 +113,7 @@ const NICHES = {
       { title: "You're answering the same questions constantly", body: 'Neighborhoods, timelines, process, pricing ranges — manually, across email and phone, for every single inquiry.' },
       { title: 'Some leads never get a real first response', body: "They came in at the wrong time. No one got back to them fast enough. The listing goes to someone else." },
     ],
-    painCallout: { strong: "You don't have a lead quality problem.", p: 'You have a response speed problem.' },
+    painCallout: { strong: "You don't have a lead quality problem.", p: 'The lead was ready. You just weren\'t first.' },
     offersIntro: "Not a CRM. Just the systems that make sure every lead gets a real response before they move on.",
     offers: [
       { title: 'Every inquiry gets an instant response', body: 'Budget, timeline, property type — collected before you even see the lead.' },
@@ -147,8 +147,8 @@ const NICHES = {
     heroSub: "People decide where to eat at 10pm. If they can't get through or don't get a response, they book somewhere else. We fix that.",
     heroNote: 'Built for independent restaurants, fine dining, fast casual, catering operations, and food & beverage teams.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in restaurant businesses.",
-    specificityLine: "Most restaurants miss the most bookings between 9pm and 11pm — when the dining room is closed but people are deciding where to eat tomorrow.",
+    connectionLine: "This is almost always the first place we find the leak in restaurant businesses.",
+    specificityLine: "They checked you out at 10pm. By 11pm they booked the place that answered.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'The phone rings during a rush', body: "Your team is plating. The phone won't stop. Either service suffers or the call does." },
@@ -156,7 +156,7 @@ const NICHES = {
       { title: 'The same menu questions flood your inbox', body: 'Dietary restrictions, allergy questions, what\'s included — answered manually, one by one, every day.' },
       { title: 'No-shows cost you real revenue', body: 'Empty slots at peak time that could have been filled. Manual reminder texts aren\'t enough.' },
     ],
-    painCallout: { strong: "You don't have a marketing problem.", p: 'You have a capture and follow-up problem.' },
+    painCallout: { strong: "You don't have a marketing problem.", p: 'The table was available. No one answered to book it.' },
     offersIntro: 'Not software for the sake of it. Just the systems that fill tables and protect revenue.',
     offers: [
       { title: 'Reservations get handled automatically', body: "Bookings, party size, special requests, and confirmations — without anyone picking up the phone." },
@@ -190,8 +190,8 @@ const NICHES = {
     heroSub: "Emergency requests don't follow business hours. The contractor who responds first gets the job. We make sure that's you.",
     heroNote: 'Built for plumbers, HVAC techs, electricians, roofers, landscapers, and home service operators.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in home service businesses.",
-    specificityLine: "Most contractors lose the most jobs between 6pm and 8am — when homeowners call in a panic and no one picks up.",
+    connectionLine: "This is almost always the first place we find the leak in home service businesses.",
+    specificityLine: "The job goes to whoever picks up first. That's almost never the person who missed the call.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'After-hours emergencies go to voicemail', body: 'Burst pipe. AC out in July. Downed tree. The homeowner calls every number they find. The one who responds gets the job.' },
@@ -199,7 +199,7 @@ const NICHES = {
       { title: 'Peak season breaks your intake', body: 'Storm rolls through. 40 calls in two days. Your phone rings off the hook and jobs start falling through the cracks.' },
       { title: 'Some jobs never make it to your calendar', body: "The request came in while you were on a roof. Nobody followed up. The customer booked someone else." },
     ],
-    painCallout: { strong: "You don't have a workload problem.", p: 'You have a capture problem.' },
+    painCallout: { strong: "You don't have a workload problem.", p: 'The work is out there. You just aren\'t the one picking up.' },
     offersIntro: "Not complicated software. Just the systems that make sure every job request gets picked up.",
     offers: [
       { title: 'After-hours requests get captured automatically', body: "Job details and photos collected while you're unavailable. You get a prioritized summary so you know what to call first." },
@@ -233,8 +233,8 @@ const NICHES = {
     heroSub: "Your best new clients show up in your Instagram DMs while you're with someone. If they don't hear back quickly, they book elsewhere. We fix that.",
     heroNote: 'Built for hair stylists, estheticians, nail techs, massage therapists, and independent wellness practitioners.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in beauty and wellness businesses.",
-    specificityLine: "Most practitioners lose the most bookings during their busiest hours — when DMs come in and there's no one free to respond.",
+    connectionLine: "This is almost always the first place we find the leak in beauty and wellness businesses.",
+    specificityLine: "They moved on to someone with online booking before you even saw the message.",
     painLabel: "What's actually happening",
     pains: [
       { title: "Booking requests come in while you're in the chair", body: "You're mid-service. Your phone is buzzing. You either stop what you're doing or lose the client." },
@@ -242,7 +242,7 @@ const NICHES = {
       { title: "Instagram is your biggest lead source — and the hardest to manage", body: "DMs asking about availability, pricing, what's included. You can't respond from the chair. So you don't. And they book elsewhere." },
       { title: 'Back-and-forth to book takes longer than it should', body: 'Finding a time, confirming, sending prep instructions — done manually, for every client, every week.' },
     ],
-    painCallout: { strong: "You don't have a marketing problem.", p: 'You have a response and booking problem.' },
+    painCallout: { strong: "You don't have a marketing problem.", p: 'They were already interested. They just booked someone who replied.' },
     offersIntro: "Not complicated systems. Just the automation that keeps your chair full without interrupting your work.",
     offers: [
       { title: 'DMs get a response instantly', body: "Even when you're mid-service. Clients get the information they need and a path to booking." },
@@ -276,8 +276,8 @@ const NICHES = {
     heroSub: "Unqualified discovery calls, slow onboarding, and overnight prospects who go cold before morning — all fixable. We fix that.",
     heroNote: 'Built for attorneys, accountants, financial advisors, consultants, and professional services firms.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in professional services firms.",
-    specificityLine: "Most firms lose the most prospects in the first 24 hours after an inquiry — before anyone has had a chance to qualify them.",
+    connectionLine: "This is almost always the first place we find the leak in professional services firms.",
+    specificityLine: "Every day without a follow-up is another day a competitor gets closer to closing them.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Unqualified leads take your best hours', body: "45-minute discovery calls with people who can't afford you. It happens weekly. At your rate, that's hundreds of dollars gone every time." },
@@ -285,7 +285,7 @@ const NICHES = {
       { title: 'After-hours prospects go cold fast', body: "Someone reaches out at 9pm ready to hire. You see it Thursday morning. They've already signed with someone who replied in an hour." },
       { title: 'Your calendar fills with low-value conversations', body: "Time that should be billed gets spent on calls that shouldn't be happening at all." },
     ],
-    painCallout: { strong: "You don't have a pipeline problem.", p: 'You have a qualification and response problem.' },
+    painCallout: { strong: "You don't have a pipeline problem.", p: 'The prospect moved on while you were busy billing someone else.' },
     offersIntro: "Not a CRM. Just the systems that protect your time and make sure the right clients reach you.",
     offers: [
       { title: 'Every inquiry gets an instant response', body: 'Scope, budget, timeline, urgency — collected before you see the lead. You only hear from people worth your time.' },
@@ -319,8 +319,8 @@ const NICHES = {
     heroSub: "Cart abandonment, unanswered questions, and browsers who disappear — all fixable. We fix that.",
     heroNote: 'Built for Shopify stores, DTC brands, online retailers, and e-commerce operators.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in e-commerce businesses.",
-    specificityLine: "Most stores lose the most revenue in the 60 minutes after a cart is abandoned — when intent is still there but the follow-up isn't.",
+    connectionLine: "This is almost always the first place we find the leak in e-commerce businesses.",
+    specificityLine: "They abandoned the cart at midnight. By morning they found it somewhere else.",
     painLabel: "What's actually happening",
     pains: [
       { title: "Cart abandonment is your biggest leak", body: "70% of shoppers add to cart and leave. Most of them intended to buy. They just got distracted before you followed up." },
@@ -328,7 +328,7 @@ const NICHES = {
       { title: 'Browsers leave with no follow-up', body: "They spend 8 minutes on your site, don't buy, and leave. No capture. No second chance. That traffic cost you money." },
       { title: 'Post-purchase experience is manual', body: "Confirmation, shipping updates, review requests — handled inconsistently, or not at all." },
     ],
-    painCallout: { strong: "You don't have a traffic problem.", p: 'You have a conversion and follow-up problem.' },
+    painCallout: { strong: "You don't have a traffic problem.", p: 'The shopper was ready to buy. The window just closed before you followed up.' },
     offersIntro: "Not complicated software. Just the systems that turn existing traffic into more revenue.",
     offers: [
       { title: 'Cart abandoners come back', body: "Automated sequences timed to when they're most likely to return. Personalized to exactly what they left behind." },
@@ -362,8 +362,8 @@ const NICHES = {
     heroSub: "Car buyers don't wait for business hours. The dealership that responds first closes more cars. We make sure that's you.",
     heroNote: 'Built for independent dealers, franchise dealerships, and automotive groups managing web leads.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in dealership businesses.",
-    specificityLine: "Most dealerships lose the most leads between 9pm and 8am — the window when shoppers submit forms and no one responds until morning.",
+    connectionLine: "This is almost always the first place we find the leak in dealership businesses.",
+    specificityLine: "The customer who submits a form at 9pm buys from whoever calls first in the morning. Most dealers call at 10am.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Night-shift web traffic goes nowhere', body: "9pm to midnight is your highest-traffic window. No one's responding. Shoppers move on to whoever answers." },
@@ -371,7 +371,7 @@ const NICHES = {
       { title: "Lead follow-up depends on who's working", body: "Hot lead on a slow Tuesday? Called back in 20 minutes. Same lead on a busy Saturday? Still sitting there Monday." },
       { title: 'Web form leads go cold overnight', body: "They submitted a form ready to come in. By morning, they've scheduled a test drive at a competitor who responded the same night." },
     ],
-    painCallout: { strong: "You don't have a traffic problem.", p: 'You have a response and follow-up problem.' },
+    painCallout: { strong: "You don't have a traffic problem.", p: 'The form was filled out. No one called before the competitor did.' },
     offersIntro: "Not a CRM. Just the systems that make sure no lead sits unanswered long enough to go cold.",
     offers: [
       { title: 'Every web inquiry gets an instant response', body: 'Vehicle interest, budget, trade-in, timeline — collected before your team even sees the lead.' },
@@ -405,8 +405,8 @@ const NICHES = {
     heroSub: "Families research multiple programs at once. The one that responds fast and follows up wins the enrollment. We make sure that's you.",
     heroNote: 'Built for tutoring centers, online educators, learning programs, test prep companies, and independent instructors.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in education and tutoring businesses.",
-    specificityLine: "Most programs lose the most enrollments in the 48 hours after a family first reaches out — before any follow-up has a chance to happen.",
+    connectionLine: "This is almost always the first place we find the leak in education and tutoring businesses.",
+    specificityLine: "The parent reaching out is talking to three tutors at once. Whoever responds first usually gets the student.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Inquiries sit unanswered for a day or two', body: "A family reaches out Tuesday. You respond Friday. They enrolled Thursday. That's the pace you're competing against." },
@@ -414,7 +414,7 @@ const NICHES = {
       { title: 'Enrollment is still a manual process', body: "Application, assessment, onboarding packet — done through email threads, by hand, for every student." },
       { title: 'Good leads go cold between inquiry and commitment', body: "Someone expresses interest. Three days pass with no follow-up. They've moved on to a program that stayed in touch." },
     ],
-    painCallout: { strong: "You don't have a demand problem.", p: 'You have a response speed and follow-up problem.' },
+    painCallout: { strong: "You don't have a demand problem.", p: 'The family was ready to enroll. They just enrolled somewhere that replied first.' },
     offersIntro: "Not complicated systems. Just the automation that turns inquiries into enrollments before interest fades.",
     offers: [
       { title: 'Every inquiry gets an instant response', body: "Program questions answered, fit assessed, and the family guided toward enrollment — automatically." },
@@ -448,8 +448,8 @@ const NICHES = {
     heroSub: "Event clients are talking to three vendors at once. The first to respond with a real quote gets the call back. We make sure that's you.",
     heroNote: 'Built for event planners, photographers, caterers, DJs, venues, and entertainment companies.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in events businesses.",
-    specificityLine: "Most event vendors lose the most bookings in the gap between the first inquiry and the first quote — when a competitor responds faster.",
+    connectionLine: "This is almost always the first place we find the leak in events businesses.",
+    specificityLine: "Event decisions move fast. If you're not the first to respond, you're not on the shortlist.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Intake is manual, every single time', body: "Date, headcount, budget, venue, vibe, dietary restrictions — you collect it all from scratch for every inquiry. Hours, gone." },
@@ -457,7 +457,7 @@ const NICHES = {
       { title: 'Follow-up falls off after the first reply', body: "You send the quote. They go quiet. You mean to follow up. You don't. Someone else does." },
       { title: "Post-booking coordination is its own full-time job", body: "Contract, deposit, vendor calls, day-of logistics — managed through email threads, memory, and hope." },
     ],
-    painCallout: { strong: "You don't have an inquiry problem.", p: 'You have an intake speed and follow-up problem.' },
+    painCallout: { strong: "You don't have an inquiry problem.", p: 'The client was ready to book. They just booked the vendor who got back first.' },
     offersIntro: "Not complicated systems. Just the automation that gets you to a real quote faster than your competitors.",
     offers: [
       { title: 'Every inquiry gets an instant intake', body: 'Date, headcount, budget, and event details collected automatically so you can quote on the first reply.' },
@@ -491,8 +491,8 @@ const NICHES = {
     heroSub: "Maintenance requests, tenant questions, and showing coordination eat your team's time. We build the systems that handle that automatically so your team handles what actually matters.",
     heroNote: 'Built for property managers, landlords, and management companies handling 20+ units.',
     heroCta: "I'll show you exactly where this is happening in your business",
-    connectionLine: "This is usually the biggest leak we see in property management businesses.",
-    specificityLine: "Most property managers find the majority of tenant friction traces back to response delays on maintenance requests — not the properties themselves.",
+    connectionLine: "This is almost always the first place we find the leak in property management businesses.",
+    specificityLine: "The tenant who doesn't hear back in 24 hours signs somewhere else. The maintenance request that goes unacknowledged becomes a review.",
     painLabel: "What's actually happening",
     pains: [
       { title: 'Maintenance requests fall through the cracks', body: 'Tenants report issues by text, email, call, and portal — sometimes all four. Tracking, routing, and following up is a full-time job. Some always slip.' },
@@ -500,7 +500,7 @@ const NICHES = {
       { title: 'Showing coordination takes 10 emails', body: "Prospective tenant wants to see unit 4B. Three emails from you, two replies, one time that doesn't work, a reschedule. Unit sits vacant." },
       { title: "Your team spends most of their time on repetitive communication", body: "Most of what they do could be handled automatically. Instead it's a full inbox and a long to-do list." },
     ],
-    painCallout: { strong: "You don't have a staffing problem.", p: 'You have a systems problem.' },
+    painCallout: { strong: "You don't have a staffing problem.", p: 'You have people doing work a system should be doing.' },
     offersIntro: "Not software for the sake of it. Just the systems that take repetitive work off your team's plate.",
     offers: [
       { title: 'Maintenance requests get routed automatically', body: "Tenants submit through one interface. AI triages by urgency, routes to the right vendor, and sends updates — without your team touching it." },
