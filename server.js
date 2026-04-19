@@ -1144,6 +1144,8 @@ Business: "${input}"`,
 });
 
 // ── Routes ───────────────────────────────────────────────────────────────────
+app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'index.html')));
+
 Object.keys(NICHES).forEach(slug => {
   app.get('/' + slug, (_, res) => res.send(buildNichePage(NICHES[slug])));
 });
