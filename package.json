@@ -1,0 +1,15 @@
+{
+  "name": "ncsystems",
+  "version": "1.0.0",
+  "description": "NCSystems landing page with Claude-powered niche routing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
