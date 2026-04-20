@@ -761,7 +761,9 @@ function buildNichePage(niche) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — ${niche.name}</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="NCSystems — ${niche.name}">
   <meta property="og:description" content="AI systems built for ${niche.name.toLowerCase()} businesses. Find where you're losing money and fix it.">
   <meta property="og:image" content="https://ncsystems.io/og-image.png">
@@ -1062,7 +1064,9 @@ function buildOtherPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — Let's Talk</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="NCSystems — Let's Talk">
   <meta property="og:description" content="AI systems built for your industry. Find where you're losing money and fix it.">
   <meta property="og:image" content="https://ncsystems.io/og-image.png">
@@ -1234,7 +1238,9 @@ function buildBookPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — Book a Call</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="NCSystems — Book a Call">
   <meta property="og:description" content="30 minutes. I'll map your operation, find where it's leaking, and show you what fixing it looks like.">
   <meta property="og:image" content="https://ncsystems.io/og-image.png">
@@ -1367,7 +1373,9 @@ app.get('/', (_, res) => res.send(`<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — AI systems built for your industry</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="NCSystems — AI systems built for your industry">
   <meta property="og:description" content="I find where small businesses are losing money and replace the broken parts with systems that fix it.">
   <meta property="og:image" content="https://ncsystems.io/og-image.png">
@@ -1494,7 +1502,9 @@ function buildAboutPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — About</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="NCSystems — About">
   <meta property="og:description" content="I find where small businesses are losing money and replace the broken parts with systems that fix it.">
   <meta property="og:image" content="https://ncsystems.io/og-image.png">
