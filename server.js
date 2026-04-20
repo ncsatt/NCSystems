@@ -847,7 +847,7 @@ function buildNichePage(niche) {
         <div class="trust-item">
           <div class="trust-num">02</div>
           <div class="trust-title">You own everything. Always.</div>
-          <div class="trust-body">All code, credentials, and infrastructure in your name from day one. If we ever stop working together, you keep the entire system. Zero lock-in.</div>
+          <div class="trust-body">All code, credentials, and infrastructure in your name from day one. Every build includes a 30-day optimization window. After that, a monthly retainer is available — but you never pay to keep access to something you already built.</div>
         </div>
         <div class="trust-item">
           <div class="trust-num">03</div>
@@ -1444,7 +1444,7 @@ function buildAboutPage() {
           </div>
           <div class="principle">
             <div class="principle-title">You own everything. Always.</div>
-            <div class="principle-body">All code, credentials, and infrastructure in your name from day one. If we stop working together, you keep the system. No lock-in, no subscriptions held over you.</div>
+            <div class="principle-body">All code, credentials, and infrastructure in your name from day one. Every build includes a 30-day optimization window after launch. After that, a monthly retainer is available for continued optimization and priority on new systems — but you never pay to keep access to something you already built.</div>
           </div>
           <div class="principle">
             <div class="principle-title">Systems over recommendations</div>
@@ -1453,6 +1453,10 @@ function buildAboutPage() {
           <div class="principle">
             <div class="principle-title">Simple or nothing</div>
             <div class="principle-body">If a system needs a manual to maintain, it's not done. Everything I build is designed to run without me — and without you needing to think about it.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Systems compound over time</div>
+            <div class="principle-body">The businesses that get the most out of this aren't the ones who built one system — they're the ones who kept finding the next thing to fix. The retainer exists for clients who want to keep going.</div>
           </div>
         </div>
       </div>
