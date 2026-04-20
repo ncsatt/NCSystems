@@ -2,14 +2,21 @@
   "version": 2,
   "builds": [
     {
+      "src": "*.{ico,png,svg}",
+      "use": "@vercel/static"
+    },
+    {
       "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/favicon.svg", "dest": "/favicon.svg" },
+    { "src": "/favicon-32.png", "dest": "/favicon-32.png" },
+    { "src": "/favicon-16.png", "dest": "/favicon-16.png" },
+    { "src": "/apple-touch-icon.png", "dest": "/apple-touch-icon.png" },
+    { "src": "/og-image.png", "dest": "/og-image.png" },
+    { "src": "/(.*)", "dest": "/server.js" }
   ]
 }
