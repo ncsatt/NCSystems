@@ -20,8 +20,9 @@ const NICHES = {
     name: 'Tourism & Hospitality',
     headline: "You're not missing bookings.",
     headlineBreak: "You're missing the ones that happen when you're not there.",
-    heroSub: "Most tourism businesses don't have a marketing problem. They have a workflow problem — and workflow problems are expensive.",
-    heroReframe: "We replace the manual, repetitive work your operation runs on with AI systems that run 24/7 and cost a fraction of the headcount doing it now.",
+    heroSub: "Most tour operators aren't losing bookings to bad marketing. They're losing them to a workflow that can't handle the volume they already have.",
+    heroInev: "The booking doesn't go to the best experience. It goes to whoever replies first.",
+    heroReframe: "I find where that's happening — missed responses, broken follow-up, manual work holding everything together — and fix it.",
     heroNote: 'Built for tour operators, activity companies, charters, surf schools, and boutique hospitality teams.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -69,8 +70,9 @@ const NICHES = {
     name: 'Health & Fitness',
     headline: "You're in a session.",
     headlineBreak: "Three people just DM'd about your pricing. One of them won't wait.",
-    heroSub: "Most fitness businesses don't have a lead problem. They have a workflow problem — and it's costing them clients every single day.",
-    heroReframe: "We replace the manual, repetitive work your business runs on so you can focus on coaching, not admin.",
+    heroSub: "Most fitness businesses aren't losing clients to bad coaching. They're losing them to a workflow that can't handle the inquiries they already get.",
+    heroInev: "The client doesn't go to the best coach. They go to whoever got back to them.",
+    heroReframe: "I find where that's happening — missed DMs, broken follow-up, manual admin holding everything together — and fix it.",
     heroNote: 'Built for personal trainers, fitness studios, yoga instructors, online coaches, and gym owners.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -118,8 +120,9 @@ const NICHES = {
     name: 'Real Estate',
     headline: "You're not losing deals to better agents.",
     headlineBreak: "You're losing them to faster ones.",
-    heroSub: "Most agents don't have a lead quality problem. They have a workflow problem — and it's giving deals to whoever has a system.",
-    heroReframe: "We replace the manual follow-up, intake, and scheduling work so every lead gets a real response before they move on.",
+    heroSub: "Most agents aren't losing deals to better competition. They're losing them to a follow-up workflow that can't keep up with the pipeline they already have.",
+    heroInev: "The deal doesn't go to the best agent. It goes to whoever followed up.",
+    heroReframe: "I find where that's happening — leads going cold, intake falling through, manual work holding the pipeline together — and fix it.",
     heroNote: 'Built for independent agents, small teams, and brokerages managing high inquiry volume.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -167,8 +170,9 @@ const NICHES = {
     name: 'Restaurants & Food',
     headline: "Your team is mid-service.",
     headlineBreak: "The phone is ringing. Someone will hang up.",
-    heroSub: "Most restaurants don't have a foot traffic problem. They have a workflow problem — and it's costing them covers every single day.",
-    heroReframe: "We replace the manual reservation handling, phone calls, and repetitive guest questions so your team can stay on the floor.",
+    heroSub: "Most restaurants aren't losing covers to bad food. They're losing them to a front-of-house workflow that can't handle the volume they already do.",
+    heroInev: "The table doesn't go to the best kitchen. It goes to whoever picked up the phone.",
+    heroReframe: "I find where that's happening — missed calls, unanswered reservations, manual coordination holding service together — and fix it.",
     heroNote: 'Built for independent restaurants, fine dining, fast casual, catering operations, and food & beverage teams.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -216,8 +220,9 @@ const NICHES = {
     name: 'Home Services',
     headline: 'The call you missed at 9pm',
     headlineBreak: "is a job your competitor starts tomorrow.",
-    heroSub: "Most home service businesses don't have a workload problem. They have a workflow problem — and it's giving jobs to whoever picks up first.",
-    heroReframe: "We replace the manual intake, dispatch, and follow-up work so every job request gets captured and routed — even when you're on a roof.",
+    heroSub: "Most home service businesses aren't losing jobs to better work. They're losing them to a scheduling workflow that can't handle the calls they already get.",
+    heroInev: "The job doesn't go to the best contractor. It goes to whoever picked up.",
+    heroReframe: "I find where that's happening — missed calls, slow estimates, manual scheduling holding the operation together — and fix it.",
     heroNote: 'Built for plumbers, HVAC techs, electricians, roofers, landscapers, and home service operators.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -265,8 +270,9 @@ const NICHES = {
     name: 'Beauty & Wellness',
     headline: "You're booked solid.",
     headlineBreak: "Someone just DM'd. You can't do both.",
-    heroSub: "Most beauty and wellness businesses don't have a visibility problem. They have a workflow problem — and it's costing them clients they already have.",
-    heroReframe: "We replace the manual DM responses, booking back-and-forth, and reminder texts so your chair stays full without interrupting your work.",
+    heroSub: "Most beauty and wellness businesses aren't losing clients to bad service. They're losing them to a booking workflow that can't handle the demand they already have.",
+    heroInev: "The appointment doesn't go to the best stylist. It goes to whoever responded first.",
+    heroReframe: "I find where that's happening — missed DMs, booking gaps, manual admin holding the schedule together — and fix it.",
     heroNote: 'Built for hair stylists, estheticians, nail techs, massage therapists, and independent wellness practitioners.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -314,8 +320,9 @@ const NICHES = {
     name: 'Professional Services',
     headline: "Every hour you spend on intake",
     headlineBreak: "is an hour you're not billing.",
-    heroSub: "Most professional services firms don't have a pipeline problem. They have a workflow problem — and it's eating billable hours every week.",
-    heroReframe: "We replace the manual qualification, intake, and scheduling work so every hour you work is an hour worth your rate.",
+    heroSub: "Most professional services firms aren't losing clients to bad work. They're losing them to a follow-up workflow that can't keep pace with the pipeline they already have.",
+    heroInev: "The contract doesn't go to the best firm. It goes to whoever followed up.",
+    heroReframe: "I find where that's happening — leads going cold, intake falling through, manual work holding client relationships together — and fix it.",
     heroNote: 'Built for attorneys, accountants, financial advisors, consultants, and professional services firms.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -363,8 +370,9 @@ const NICHES = {
     name: 'E-commerce & Retail',
     headline: "Seventy percent of your shoppers leave without buying.",
     headlineBreak: "Most of them could have been saved.",
-    heroSub: "Most e-commerce stores don't have a traffic problem. They have a workflow problem — and it's leaving revenue on the table from every visit.",
-    heroReframe: "We replace the manual follow-up, support, and post-purchase work so your existing traffic converts at a higher rate.",
+    heroSub: "Most e-commerce stores aren't losing sales to bad products. They're losing them to a customer workflow that can't handle the traffic they already have.",
+    heroInev: "The sale doesn't go to the best product. It goes to whoever answered the question.",
+    heroReframe: "I find where that's happening — abandoned carts, unanswered support, manual follow-up holding revenue together — and fix it.",
     heroNote: 'Built for Shopify stores, DTC brands, online retailers, and e-commerce operators.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -412,8 +420,9 @@ const NICHES = {
     name: 'Auto & Dealerships',
     headline: "Shoppers research at midnight.",
     headlineBreak: "Your website form sits there. They've booked a test drive somewhere else by morning.",
-    heroSub: "Most dealerships don't have a traffic problem. They have a workflow problem — and it's giving sales to whoever responds first.",
-    heroReframe: "We replace the manual lead response, service scheduling, and follow-up work so no lead waits long enough to call a competitor.",
+    heroSub: "Most dealerships aren't losing sales to better inventory. They're losing them to a follow-up workflow that can't handle the leads they already get.",
+    heroInev: "The deal doesn't go to the best lot. It goes to whoever called back first.",
+    heroReframe: "I find where that's happening — leads going cold overnight, slow follow-up, manual coordination between sales and service — and fix it.",
     heroNote: 'Built for independent dealers, franchise dealerships, and automotive groups managing web leads.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -461,8 +470,9 @@ const NICHES = {
     name: 'Education & Tutoring',
     headline: "A parent's interest lasts about 72 hours.",
     headlineBreak: "After that, they've enrolled somewhere else.",
-    heroSub: "Most education businesses don't have a demand problem. They have a workflow problem — and families who don't hear back quickly don't wait to find out.",
-    heroReframe: "We replace the manual inquiry response, follow-up, and enrollment work so every family gets a real answer before they move on.",
+    heroSub: "Most education businesses aren't losing students to bad teaching. They're losing them to an enrollment workflow that can't handle the inquiries they already get.",
+    heroInev: "The enrollment doesn't go to the best teacher. It goes to whoever responded.",
+    heroReframe: "I find where that's happening — missed inquiries, slow onboarding, manual scheduling holding everything together — and fix it.",
     heroNote: 'Built for tutoring centers, online educators, learning programs, test prep companies, and independent instructors.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -510,8 +520,9 @@ const NICHES = {
     name: 'Events & Entertainment',
     headline: "Every inquiry starts the same way.",
     headlineBreak: "Same questions. Same manual work. First vendor to quote wins.",
-    heroSub: "Most events businesses don't have an inquiry problem. They have a workflow problem — and it's giving bookings to whoever moves fastest.",
-    heroReframe: "We replace the manual intake, quote prep, and follow-up work so you're always the first to send a real number.",
+    heroSub: "Most event businesses aren't losing bookings to bad work. They're losing them to a response workflow that can't handle the inquiries they already get.",
+    heroInev: "The booking doesn't go to the best vendor. It goes to whoever quoted first.",
+    heroReframe: "I find where that's happening — missed inquiries, slow quotes, manual coordination holding bookings together — and fix it.",
     heroNote: 'Built for event planners, photographers, caterers, DJs, venues, and entertainment companies.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -559,8 +570,9 @@ const NICHES = {
     name: 'Property Management',
     headline: "More units, same team.",
     headlineBreak: "It's possible — if the right things run automatically.",
-    heroSub: "Most property management companies don't have a staffing problem. They have a workflow problem — and it's filling your team's day with work a system should be doing.",
-    heroReframe: "We replace the repetitive maintenance routing, tenant communication, and showing coordination so your team can focus on what actually requires them.",
+    heroSub: "Most property managers aren't losing tenants to bad properties. They're losing them to a response workflow that can't handle the volume they already manage.",
+    heroInev: "The lease doesn't go to the best property. It goes to whoever got back to them.",
+    heroReframe: "I find where that's happening — missed inquiries, slow maintenance response, manual coordination holding the portfolio together — and fix it.",
     heroNote: 'Built for property managers, landlords, and management companies handling 20+ units.',
     heroCta: "I'll show you exactly where this is costing you",
     metrics: [
@@ -665,6 +677,9 @@ function buildNichePage(niche) {
     .wordmark { font-family: ui-monospace, 'Courier New', monospace; font-size: 13px; letter-spacing: 0.15em; color: var(--fg); display: flex; align-items: center; gap: 6px; text-decoration: none; }
     .wordmark-bracket { opacity: 0.35; }
     .wordmark-dot { width: 7px; height: 7px; background: var(--fg); border-radius: 50%; }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-size: 13px; color: rgba(237,238,242,0.38); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-link:hover { color: var(--fg); }
     .nav-cta { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
     .nav-cta:hover { color: var(--fg); }
 
@@ -674,6 +689,7 @@ function buildNichePage(niche) {
     .hero h1 { font-size: clamp(2.15rem, 5vw, 3.35rem); font-weight: 700; line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
     .hero h1 .break { display: block; color: rgba(237,238,242,0.92); }
     .hero-sub { max-width: 680px; margin: 0 auto 0.9rem; font-size: 1.08rem; color: var(--muted); }
+    .hero-inev { max-width: 640px; margin: 0 auto 0.8rem; font-size: 1.02rem; font-weight: 600; color: rgba(237,238,242,0.72); }
     .hero-reframe { max-width: 640px; margin: 0 auto 2.5rem; font-size: 0.97rem; color: rgba(237,238,242,0.38); font-style: italic; }
     .btn { display: inline-block; background: var(--accent-bg); color: var(--accent-fg); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; padding: 14px 32px; border-radius: 10px; text-decoration: none; transition: opacity 0.2s, transform 0.15s; }
     .btn:hover { opacity: 0.88; transform: translateY(-1px); }
@@ -764,13 +780,17 @@ function buildNichePage(niche) {
       <a href="/" class="wordmark">
         <span class="wordmark-bracket">[</span>NCSYSTEMS<span class="wordmark-dot"></span><span class="wordmark-bracket">]</span>
       </a>
-      <a href="${CALENDLY}" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      <div class="nav-right">
+        <a href="/about" class="nav-link">About</a>
+        <a href="${CALENDLY}" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      </div>
     </nav>
 
     <section class="hero">
       <div class="niche-tag">${niche.name}</div>
       <h1>${niche.headline}<span class="break">${niche.headlineBreak}</span></h1>
       <p class="hero-sub">${niche.heroSub}</p>
+      <p class="hero-inev">${niche.heroInev}</p>
       <p class="hero-reframe">${niche.heroReframe}</p>
       <a href="${CALENDLY}" class="btn" target="_blank" rel="noopener noreferrer">${niche.heroCta}</a>
       <div class="hero-note">${niche.heroNote}</div>
@@ -1305,10 +1325,167 @@ app.get('/', (_, res) => res.send(`<!DOCTYPE html>
 </body>
 </html>`));
 
+// ── /about page ──────────────────────────────────────────────────────────────
+function buildAboutPage() {
+  const starScript = `
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 180; i++) stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.3 + 0.2,
+        speed: Math.random() * 0.004 + 0.001,
+        phase: Math.random() * Math.PI * 2,
+        drift: (Math.random() - 0.5) * 0.06,
+      });
+    }
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        const a = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(t * s.speed * 60 + s.phase));
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(237,238,242,' + a + ')'; ctx.fill();
+        s.x += s.drift;
+        if (s.x < -2) s.x = W + 2;
+        if (s.x > W + 2) s.x = -2;
+      }
+    }
+    function loop(t) { draw(t / 1000); requestAnimationFrame(loop); }
+    resize(); initStars(); requestAnimationFrame(loop);
+    window.addEventListener('resize', () => { resize(); initStars(); });
+  `;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCSystems — About</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020203; --fg: #EDEEF2;
+      --muted: rgba(237,238,242,0.50);
+      --muted-2: rgba(237,238,242,0.35);
+      --rule: rgba(237,238,242,0.08);
+      --rule-2: rgba(237,238,242,0.05);
+      --accent-bg: #EDEEF2; --accent-fg: #020203;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    #starfield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+    .wordmark { font-family: ui-monospace, 'Courier New', monospace; font-size: 13px; letter-spacing: 0.15em; color: var(--fg); display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .wordmark-bracket { opacity: 0.35; }
+    .wordmark-dot { width: 7px; height: 7px; background: var(--fg); border-radius: 50%; animation: dot-pulse 3s ease-in-out infinite; }
+    @keyframes dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-size: 13px; color: rgba(237,238,242,0.38); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-link:hover { color: var(--fg); }
+    .nav-cta { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; }
+    .content { max-width: 680px; margin: 0 auto; padding: 5rem 2.5rem 6rem; flex: 1; }
+    .page-label { font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,238,242,0.28); margin-bottom: 2.5rem; }
+    .hero-lede { font-size: clamp(1.55rem, 3.5vw, 2rem); font-weight: 700; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: 1.25rem; color: var(--fg); }
+    .hero-sub { font-size: 15px; color: var(--muted); line-height: 1.72; max-width: 560px; }
+    .hero-sub + .hero-sub { margin-top: 0.9rem; }
+    .section { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--rule); }
+    .section-label { font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,238,242,0.28); margin-bottom: 2rem; }
+    .wedge { font-size: 1.05rem; font-weight: 600; color: var(--fg); margin-bottom: 2rem; letter-spacing: -0.01em; }
+    .principles { display: flex; flex-direction: column; }
+    .principle { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; padding: 1.4rem 0; border-bottom: 1px solid var(--rule-2); align-items: start; }
+    .principle:first-child { padding-top: 0; }
+    .principle:last-child { border-bottom: none; }
+    @media (max-width: 580px) { .principle { grid-template-columns: 1fr; gap: 0.4rem; } }
+    .principle-title { font-size: 13px; font-weight: 600; color: var(--fg); }
+    .principle-body { font-size: 14px; color: var(--muted); line-height: 1.68; }
+    .bg-statement { font-size: 17px; line-height: 1.65; color: var(--fg); margin-bottom: 1.5rem; font-weight: 500; }
+    .bg-note { font-size: 15px; color: var(--muted); line-height: 1.72; }
+    .cta-section { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--rule); text-align: center; }
+    .cta-section h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+    .cta-section p { color: var(--muted-2); font-size: 15px; margin-bottom: 2rem; }
+    .btn { display: inline-block; background: var(--accent-bg); color: var(--accent-fg); padding: 14px 26px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.88; }
+    footer { display: flex; justify-content: space-between; padding: 1.5rem 2.5rem; border-top: 1px solid var(--rule); font-size: 12px; color: rgba(237,238,242,0.22); letter-spacing: 0.04em; gap: 1rem; flex-wrap: wrap; }
+    .footer-right { display: flex; align-items: center; gap: 8px; }
+    .footer-dot { width: 6px; height: 6px; background: rgba(237,238,242,0.22); border-radius: 50%; }
+    @media (max-width: 640px) { nav, footer { padding: 1.2rem 1.25rem; } .content { padding: 4rem 1.25rem 5rem; } }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <div class="page">
+    <nav>
+      <a href="/" class="wordmark">
+        <span class="wordmark-bracket">[</span>NCSYSTEMS<span class="wordmark-dot"></span><span class="wordmark-bracket">]</span>
+      </a>
+      <div class="nav-right">
+        <a href="/about" class="nav-link">About</a>
+        <a href="${CALENDLY}" class="nav-cta" target="_blank" rel="noopener noreferrer">Book a call →</a>
+      </div>
+    </nav>
+
+    <div class="content">
+      <div class="page-label">About</div>
+
+      <h1 class="hero-lede">I find where small businesses are losing money and replace the broken parts with systems that fix it.</h1>
+      <p class="hero-sub">Sometimes that's response time. Sometimes follow-up. Sometimes something else entirely.</p>
+      <p class="hero-sub">Not another tool. Not a recommendation. Something that actually runs in your business.</p>
+
+      <div class="section">
+        <div class="section-label">How I work</div>
+        <p class="wedge">Most businesses don't have an AI problem. They have a workflow problem.</p>
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-title">Proof before payment</div>
+            <div class="principle-body">You evaluate a working system built for your actual workflow before any invoice. If you don't see clear ROI, we don't move forward.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">You own everything. Always.</div>
+            <div class="principle-body">All code, credentials, and infrastructure in your name from day one. If we stop working together, you keep the system. No lock-in, no subscriptions held over you.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Systems over recommendations</div>
+            <div class="principle-body">I don't write strategy documents. I build things that run. The deliverable is a live system handling real work in your business — not a slide deck about what could be built.</div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Simple or nothing</div>
+            <div class="principle-body">If a system needs a manual to maintain, it's not done. Everything I build is designed to run without me — and without you needing to think about it.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Background</div>
+        <p class="bg-statement">Studied economics at the University of Wisconsin. Since 2017, traded crypto and advised projects on strategy, go-to-market, and capital raises — from six to eight figures in valuation. Now I build AI systems for small businesses.</p>
+        <p class="bg-note">The thread through all of it: finding where the structure is broken and fixing it. Economics gave me the analytical lens. Crypto — both trading and advising — was years of working inside businesses where the cost of a broken system is immediate and measurable. That's the same work I do now, applied to operations instead of markets.</p>
+      </div>
+
+      <div class="cta-section">
+        <h2>I'll show you exactly where your operation is leaking</h2>
+        <p>30 minutes. I'll map what's actually breaking, put a number on what it's costing, and show you what fixing it looks like.</p>
+        <a href="${CALENDLY}" class="btn" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
+    </div>
+
+    <footer>
+      <span>ncsystems.io</span>
+      <div class="footer-right"><div class="footer-dot"></div><span>accepting new engagements</span></div>
+    </footer>
+  </div>
+
+  <script>${starScript}</script>
+</body>
+</html>`;
+}
+
 Object.keys(NICHES).forEach(slug => {
   app.get('/' + slug, (_, res) => res.send(buildNichePage(NICHES[slug])));
 });
 
+app.get('/about', (_, res) => res.send(buildAboutPage()));
 app.get('/other', (_, res) => res.send(buildOtherPage()));
 app.get('/book', (_, res) => res.send(buildBookPage()));
 
