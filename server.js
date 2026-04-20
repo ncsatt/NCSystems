@@ -761,6 +761,14 @@ function buildNichePage(niche) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — ${niche.name}</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NCSystems — ${niche.name}">
+  <meta property="og:description" content="AI systems built for ${niche.name.toLowerCase()} businesses. Find where you're losing money and fix it.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:url" content="https://ncsystems.io/${Object.keys(NICHES).find(k => NICHES[k] === niche)}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ncsystems.io/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -1054,6 +1062,13 @@ function buildOtherPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — Let's Talk</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NCSystems — Let's Talk">
+  <meta property="og:description" content="AI systems built for your industry. Find where you're losing money and fix it.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ncsystems.io/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -1219,6 +1234,13 @@ function buildBookPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — Book a Call</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NCSystems — Book a Call">
+  <meta property="og:description" content="30 minutes. I'll map your operation, find where it's leaking, and show you what fixing it looks like.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ncsystems.io/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --bg: #020203; --fg: #EDEEF2; --muted: rgba(237,238,242,0.50); --rule: rgba(237,238,242,0.08); }
@@ -1345,6 +1367,14 @@ app.get('/', (_, res) => res.send(`<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — AI systems built for your industry</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NCSystems — AI systems built for your industry">
+  <meta property="og:description" content="I find where small businesses are losing money and replace the broken parts with systems that fix it.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:url" content="https://ncsystems.io">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ncsystems.io/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #020203; color: #EDEEF2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; position: relative; }
@@ -1464,6 +1494,14 @@ function buildAboutPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NCSystems — About</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NCSystems — About">
+  <meta property="og:description" content="I find where small businesses are losing money and replace the broken parts with systems that fix it.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:url" content="https://ncsystems.io/about">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ncsystems.io/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
