@@ -1312,6 +1312,122 @@ function buildBookPage() {
 </html>`;
 }
 
+// ── /booked confirmation page ─────────────────────────────────────────────────
+function buildBookedPage() {
+  const starScript = `
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 180; i++) stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.3 + 0.2,
+        speed: Math.random() * 0.004 + 0.001,
+        phase: Math.random() * Math.PI * 2,
+        drift: (Math.random() - 0.5) * 0.06,
+      });
+    }
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        const a = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(t * s.speed * 60 + s.phase));
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(237,238,242,' + a + ')'; ctx.fill();
+        s.x += s.drift;
+        if (s.x < -2) s.x = W + 2;
+        if (s.x > W + 2) s.x = -2;
+      }
+    }
+    function loop(t) { draw(t / 1000); requestAnimationFrame(loop); }
+    resize(); initStars(); requestAnimationFrame(loop);
+    window.addEventListener('resize', () => { resize(); initStars(); });
+  `;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCSystems — You're booked</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #020203; --fg: #EDEEF2; --muted: rgba(237,238,242,0.50); --rule: rgba(237,238,242,0.08); --accent: rgba(237,238,242,0.06); }
+    body { background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    #starfield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+    .wordmark { font-family: ui-monospace, 'Courier New', monospace; font-size: 13px; letter-spacing: 0.15em; color: var(--fg); display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .wordmark-bracket { opacity: 0.35; }
+    .wordmark-dot { width: 7px; height: 7px; background: var(--fg); border-radius: 50%; }
+    .main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 1.5rem; text-align: center; }
+    .check { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(237,238,242,0.20); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
+    .check svg { width: 22px; height: 22px; stroke: var(--fg); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .tag { display: inline-block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(237,238,242,0.35); border: 1px solid rgba(237,238,242,0.12); border-radius: 20px; padding: 5px 14px; margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 1rem; max-width: 540px; }
+    .sub { color: var(--muted); font-size: 1rem; max-width: 440px; margin: 0 auto 3rem; }
+    .prep { background: var(--accent); border: 1px solid var(--rule); border-radius: 12px; padding: 2rem 2.5rem; max-width: 480px; width: 100%; text-align: left; margin-bottom: 2.5rem; }
+    .prep-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(237,238,242,0.35); margin-bottom: 1.25rem; }
+    .prep-item { display: flex; gap: 0.9rem; align-items: flex-start; margin-bottom: 1rem; }
+    .prep-item:last-child { margin-bottom: 0; }
+    .prep-num { font-family: ui-monospace, monospace; font-size: 11px; color: rgba(237,238,242,0.30); padding-top: 3px; min-width: 16px; }
+    .prep-text { font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+    .prep-text strong { color: var(--fg); font-weight: 500; }
+    .note { font-size: 0.8rem; color: rgba(237,238,242,0.25); max-width: 400px; }
+    footer { display: flex; justify-content: space-between; padding: 1.5rem 2.5rem; border-top: 1px solid var(--rule); font-size: 12px; color: rgba(237,238,242,0.25); letter-spacing: 0.04em; flex-wrap: wrap; gap: 1rem; margin-top: auto; }
+    .footer-right { display: flex; align-items: center; gap: 8px; }
+    .footer-dot { width: 6px; height: 6px; background: rgba(237,238,242,0.25); border-radius: 50%; }
+    @media (max-width: 640px) { nav, footer { padding: 1.2rem 1.25rem; } .prep { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <div class="page">
+    <nav>
+      <a href="/" class="wordmark"><span class="wordmark-bracket">[</span>NCSYSTEMS<span class="wordmark-dot"></span><span class="wordmark-bracket">]</span></a>
+    </nav>
+
+    <div class="main">
+      <div class="check">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="tag">Call confirmed</div>
+      <h1>You're on the calendar.</h1>
+      <p class="sub">Check your email for the confirmation and Google Meet link. I'll see you on the call.</p>
+
+      <div class="prep">
+        <div class="prep-label">How to get the most out of 30 minutes</div>
+        <div class="prep-item">
+          <span class="prep-num">01</span>
+          <span class="prep-text"><strong>Think about where time goes.</strong> What do you or your team handle manually every week that feels repetitive? Inquiries, follow-up, scheduling, reminders — anything that happens over and over.</span>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">02</span>
+          <span class="prep-text"><strong>Know your biggest leak.</strong> Where are you losing customers you shouldn't be losing? Slow response, no-shows, leads going cold — pick the one that stings the most.</span>
+        </div>
+        <div class="prep-item">
+          <span class="prep-num">03</span>
+          <span class="prep-text"><strong>No prep required beyond that.</strong> I'll walk you through the rest. This is a conversation, not a presentation.</span>
+        </div>
+      </div>
+
+      <p class="note">Questions before the call? Reach out at <a href="mailto:nick@ncsystems.io" style="color: rgba(237,238,242,0.45); text-decoration: none;">nick@ncsystems.io</a></p>
+    </div>
+
+    <footer>
+      <span>ncsystems.io</span>
+      <div class="footer-right"><div class="footer-dot"></div><span>accepting new engagements</span></div>
+    </footer>
+  </div>
+  <script>${starScript}</script>
+</body>
+</html>`;
+}
+
 // ── Email capture endpoint ────────────────────────────────────────────────────
 // Writes to leads.json in the website directory.
 // For production: replace this with Formspree, Resend, or a DB write.
@@ -1640,6 +1756,7 @@ Object.keys(NICHES).forEach(slug => {
 app.get('/about', (_, res) => res.send(buildAboutPage()));
 app.get('/other', (_, res) => res.send(buildOtherPage()));
 app.get('/book', (_, res) => res.send(buildBookPage()));
+app.get('/booked', (_, res) => res.send(buildBookedPage()));
 
 // ── Start ────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
