@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 // ── Config ───────────────────────────────────────────────────────────────────
-const CALENDLY = 'https://calendly.com/nick-ncsystems/30min';
+const CALENDLY = 'https://calendly.com/nick-ncsystems-s7qn/breakdown';
 
 // ── Niche data ───────────────────────────────────────────────────────────────
 // Fields per niche:
