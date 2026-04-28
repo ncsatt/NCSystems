@@ -1465,7 +1465,14 @@ app.post('/classify', async (req, res) => {
         messages: [{
           role: 'user',
           content: `Classify this business into exactly one category slug.
-Valid slugs: ${slugs}, other
+
+Valid slugs: ${slugs}, strategic, other
+
+Routing rules:
+- Use "strategic" when the business is multi-location, multi-property, has an executive team, is a hotel or resort group, real estate portfolio, fleet operator, or otherwise signals revenue scale beyond a single owner-operator (typically $5M+ revenue or formal management layer).
+- Use one of the niche slugs for single owner-operated businesses (one shop, one studio, one practice, one tour outfit, one restaurant, etc.).
+- Use "other" only when nothing else fits.
+
 Return ONLY the slug. No punctuation, no explanation.
 Business: "${input}"`,
         }],
@@ -1474,7 +1481,7 @@ Business: "${input}"`,
 
     const data = await response.json();
     const raw  = data.content[0].text.trim().toLowerCase().replace(/[^a-z-]/g, '');
-    const niche = NICHES[raw] ? raw : 'other';
+    const niche = (NICHES[raw] || raw === 'strategic') ? raw : 'other';
     res.json({ niche });
   } catch (err) {
     console.error('[classify error]', err.message);
@@ -1749,11 +1756,190 @@ function buildAboutPage() {
 </html>`;
 }
 
+// ── /strategic page ──────────────────────────────────────────────────────────
+// Tuned for $5-25M operators reached via heavy-hitter networking.
+// Operator framing (not technologist), email-only CTA, no Calendly link,
+// no service grid, no metrics bar. Discreet by design — noindex.
+function buildStrategicPage() {
+  const starScript = `
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let W, H, stars = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 180; i++) stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.3 + 0.2,
+        speed: Math.random() * 0.004 + 0.001,
+        phase: Math.random() * Math.PI * 2,
+        drift: (Math.random() - 0.5) * 0.06,
+      });
+    }
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        const a = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(t * s.speed * 60 + s.phase));
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(237,238,242,' + a + ')'; ctx.fill();
+        s.x += s.drift;
+        if (s.x < -2) s.x = W + 2;
+        if (s.x > W + 2) s.x = -2;
+      }
+    }
+    function loop(t) { draw(t / 1000); requestAnimationFrame(loop); }
+    resize(); initStars(); requestAnimationFrame(loop);
+    window.addEventListener('resize', () => { resize(); initStars(); });
+  `;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCSystems — Strategic Engagements</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:title" content="NCSystems — Strategic Engagements">
+  <meta property="og:description" content="Operations advisory for owner-operators with serious revenue. Engagements are private and not advertised on the front of this site.">
+  <meta property="og:image" content="https://ncsystems.io/og-image.png">
+  <meta property="og:url" content="https://ncsystems.io/strategic">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #020203; --fg: #EDEEF2;
+      --muted: rgba(237,238,242,0.50);
+      --muted-2: rgba(237,238,242,0.35);
+      --rule: rgba(237,238,242,0.08);
+      --rule-2: rgba(237,238,242,0.05);
+      --accent-bg: #EDEEF2; --accent-fg: #020203;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; min-height: 100vh; line-height: 1.6; }
+    #starfield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+    .wordmark { font-family: ui-monospace, 'Courier New', monospace; font-size: 13px; letter-spacing: 0.15em; color: var(--fg); display: flex; align-items: center; gap: 6px; text-decoration: none; }
+    .wordmark-bracket { opacity: 0.35; }
+    .wordmark-dot { width: 7px; height: 7px; background: var(--fg); border-radius: 50%; animation: dot-pulse 3s ease-in-out infinite; }
+    @keyframes dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .nav-tag { font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,238,242,0.32); }
+    .content { max-width: 720px; margin: 0 auto; padding: 5rem 2.5rem 6rem; flex: 1; }
+    .page-label { font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,238,242,0.28); margin-bottom: 2.5rem; }
+    .hero-lede { font-size: clamp(1.55rem, 3.5vw, 2rem); font-weight: 700; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: 1rem; color: var(--fg); max-width: 640px; }
+    .hero-lede-2 { font-size: clamp(1.55rem, 3.5vw, 2rem); font-weight: 700; letter-spacing: -0.022em; line-height: 1.18; margin-bottom: 1.75rem; color: var(--fg); max-width: 640px; }
+    .hero-sub { font-size: 15px; color: var(--muted); line-height: 1.65; max-width: 600px; }
+    .hero-sub + .hero-sub { margin-top: 1rem; }
+    .section { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--rule); }
+    .section-label { font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,238,242,0.28); margin-bottom: 2rem; }
+    .principles { display: flex; flex-direction: column; }
+    .principle { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; padding: 1.4rem 0; border-bottom: 1px solid var(--rule-2); align-items: start; }
+    .principle:first-child { padding-top: 0; }
+    .principle:last-child { border-bottom: none; }
+    @media (max-width: 580px) { .principle { grid-template-columns: 1fr; gap: 0.4rem; } }
+    .principle-title { font-size: 13px; font-weight: 600; color: var(--fg); }
+    .principle-body { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .principle-body p { margin: 0; }
+    .principle-body p + p { margin-top: 0.85rem; }
+    .bg-statement { font-size: 16px; line-height: 1.65; color: var(--fg); margin-bottom: 1.5rem; font-weight: 500; }
+    .bg-note { font-size: 15px; color: var(--muted); line-height: 1.7; }
+    .cta-section { margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--rule); }
+    .cta-section h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+    .cta-section p { color: var(--muted); font-size: 15px; margin-bottom: 1rem; line-height: 1.65; max-width: 580px; }
+    .cta-section p:last-of-type { margin-bottom: 2rem; }
+    .cta-emphasis { color: var(--fg) !important; font-weight: 600; letter-spacing: -0.005em; }
+    .email-link { font-family: ui-monospace, monospace; font-size: 16px; color: var(--fg); text-decoration: none; border-bottom: 1px solid rgba(237,238,242,0.25); padding-bottom: 2px; transition: border-color 0.2s; letter-spacing: 0.01em; }
+    .email-link:hover { border-color: var(--fg); }
+    footer { display: flex; justify-content: space-between; padding: 1.5rem 2.5rem; border-top: 1px solid var(--rule); font-size: 12px; color: rgba(237,238,242,0.22); letter-spacing: 0.04em; gap: 1rem; flex-wrap: wrap; }
+    .footer-right { display: flex; align-items: center; gap: 8px; }
+    .footer-dot { width: 6px; height: 6px; background: rgba(237,238,242,0.22); border-radius: 50%; }
+    @media (max-width: 640px) { nav, footer { padding: 1.2rem 1.25rem; } .content { padding: 4rem 1.25rem 5rem; } }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <div class="page">
+    <nav>
+      <a href="/" class="wordmark">
+        <span class="wordmark-bracket">[</span>NCSYSTEMS<span class="wordmark-dot"></span><span class="wordmark-bracket">]</span>
+      </a>
+      <span class="nav-tag">By introduction</span>
+    </nav>
+
+    <div class="content">
+      <div class="page-label">Strategic Engagements</div>
+
+      <h1 class="hero-lede">Operations advisory for owner-operators with serious revenue.</h1>
+      <p class="hero-lede-2">Focused on the part of the business that quietly breaks.</p>
+      <p class="hero-sub">At a certain point, the problem isn't demand.</p>
+      <p class="hero-sub">It's what happens after it comes in.</p>
+      <p class="hero-sub">Decisions stall.<br>Work gets routed wrong.<br>Costs stay fixed while output slows.</p>
+      <p class="hero-sub">Nothing looks broken from the outside.</p>
+      <p class="hero-sub">But margin starts leaking.</p>
+      <p class="hero-sub">I work with a small number of operators each year on the part of their business they don't have anyone to talk to about.</p>
+      <p class="hero-sub">Engagements are private.<br>Scoped to the operator.<br>Not advertised publicly.</p>
+
+      <div class="section">
+        <div class="section-label">How engagements run</div>
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-title">Engagements start with a quiet read</div>
+            <div class="principle-body"><p>I go inside the operation first. That means calls, dashboards, workflow, and the P&amp;L if you're open to it.</p><p>The first output is a written read: where margin is leaking, what's structural, and what can actually be fixed.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Operator-led, not vendor-led</div>
+            <div class="principle-body"><p>The work is whatever the problem requires. Sometimes systems. Sometimes process. Sometimes one decision that's been postponed.</p><p>Vendors lead with their hammer. I lead with what's actually in the way.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The deliverable is leverage</div>
+            <div class="principle-body"><p>If it doesn't reduce operator time, fixed cost, or risk within 90 days, it was scoped wrong.</p><p>I'd rather decline than take work where the framing isn't right.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">Confidential by default</div>
+            <div class="principle-body"><p>Client work is private. No names on the site. No specifics in pitches.</p><p>Operators in the same vertical are referred elsewhere when there's overlap.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-title">The relationship compounds</div>
+            <div class="principle-body"><p>The most useful engagements are the ones that come back.</p><p>The role becomes thinking partner more than consultant. After a year, operators know their business better than I do, and the work shifts toward what they bring me.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Background</div>
+        <p class="bg-statement">Background in economics and high-pressure operating environments. 9 years inside crypto markets: capital strategy, go-to-market, and operations across projects operating with real capital and non-trivial scale.</p>
+        <p class="bg-note">The throughline is the same: finding where structure stopped fitting the business and fixing it before the cost shows up.</p>
+      </div>
+
+      <div class="cta-section">
+        <h2>Private inquiries</h2>
+        <p>I take on a small number of engagements each year.</p>
+        <p>Initial conversations are by introduction or direct outreach.</p>
+        <p class="cta-emphasis">No booking links.</p>
+        <p>Reach me directly:</p>
+        <a href="mailto:nick@ncsystems.io?subject=Strategic%20engagement%20inquiry" class="email-link">nick@ncsystems.io</a>
+      </div>
+    </div>
+
+    <footer>
+      <span>ncsystems.io</span>
+      <div class="footer-right"><div class="footer-dot"></div><span>by introduction</span></div>
+    </footer>
+  </div>
+
+  <script>${starScript}</script>
+</body>
+</html>`;
+}
+
 Object.keys(NICHES).forEach(slug => {
   app.get('/' + slug, (_, res) => res.send(buildNichePage(NICHES[slug])));
 });
 
 app.get('/about', (_, res) => res.send(buildAboutPage()));
+app.get('/strategic', (_, res) => res.send(buildStrategicPage()));
 app.get('/other', (_, res) => res.send(buildOtherPage()));
 app.get('/book', (_, res) => res.send(buildBookPage()));
 app.get('/booked', (_, res) => res.send(buildBookedPage()));
